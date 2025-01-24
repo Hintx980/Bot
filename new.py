@@ -1,8 +1,10 @@
 import discord
 from discord.ext import commands
 
-# Your Discord user token (self-bot usage is against Discord ToS; proceed at your own risk)
-TOKEN = "lawda yaha dalo "
+import os  # For using environment variables
+
+# Your Discord user token (store it securely using environment variables or a .env file)
+TOKEN = os.getenv("DISCORD_TOKEN")
 
 # Target user's ID to monitor (the bot's ID)
 TARGET_USER_ID = 1175575988390866976
@@ -66,10 +68,10 @@ async def on_message(message):
 
 # Run the self-bot with your user token
 try:
+    if TOKEN is None:
+        raise ValueError("Token not found! Please set your DISCORD_TOKEN environment variable.")
     client.run(TOKEN)  # No 'bot=False' needed here for self-bots
 except discord.LoginFailure:
     print("Invalid token provided. Please check your user token.")
 except Exception as e:
     print(f"An unexpected error occurred: {e}")
-
-
