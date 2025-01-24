@@ -2,7 +2,7 @@ import discord
 from discord.ext import commands
 
 # Your Discord user token (self-bot usage is against Discord ToS; proceed at your own risk)
-TOKEN = "tokem dalo"
+TOKEN = "lawda yaha dalo "
 
 # Target user's ID to monitor (the bot's ID)
 TARGET_USER_ID = 1175575988390866976
@@ -70,4 +70,6 @@ try:
 except discord.LoginFailure:
     print("Invalid token provided. Please check your user token.")
 except Exception as e:
-    print(f"An unexpected error occurred: {e}"
+    print(f"An unexpected error occurred: {e}")
+
+
